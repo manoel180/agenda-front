@@ -1,0 +1,33 @@
+import api from "../api";
+
+class ContactServices {
+    getAll() {
+        return api.get("/contact");
+    }
+
+    get(id) {
+        return api.get(`/contact/${id}`);
+    }
+
+    create(data) {
+        return api.post("/contact", data);
+    }
+
+    update(id, data) {
+        return api.put(`/contact/${id}`, data);
+    }
+
+    delete(id) {
+        return api.delete(`/contact/${id}`);
+    }
+
+    deleteAll() {
+        return api.delete(`/contact`);
+    }
+
+    findByName(name) {
+        return api.get(`/contact?name=${name}`);
+    }
+}
+
+export default new ContactServices();
